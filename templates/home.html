@@ -1,0 +1,60 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block title %}
+    <title>home</title>
+    {% endblock %}
+    
+    <style>
+        body{
+            margin:0px;
+        }
+        #container{
+            background-color: black;
+            padding-left: 157px;
+            display: flex;
+            justify-content: space-between;
+            color:white;
+        }
+        #container>.nav>a{
+            color:white;
+            text-decoration: none;
+        
+        }
+        .nav{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 456px;
+        }
+        .nav span{
+                color:green;
+                margin-left: 20px;
+                text-decoration: underline;
+                font-size: 20px;
+        }
+        .nav span:hover{
+            background-color: white;
+            border-radius: 3px;
+            padding:0px 15px 5px;
+        }
+        .carousel-item active{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Pavan_kalyan Bikes</h1>
+        <div class="nav">
+          <a href="#">Home</a>
+          <a href="#">user:<span>{{request.user}}</span></a>
+          <a href="{% url 'logout_user' %}" href="#">logout</a>
+          <a href="{% url 'contact' %}" href="#" >Contact</a></div>
+    </div>
+    <img src="{% static 'images/img.jpg' %}" alt="kalyan">
+    <script src="{% static 'js/mdb.min.js' %}"></script>
+</body>
+</html>

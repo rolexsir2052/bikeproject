@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <style>
+        body{
+            margin: 0px;
+        }
+        label{
+            color:blue;
+        }
+        #login{
+            margin: 10px 0px 0px 0px ;
+        }
+        #l{
+            color:green;
+            font-size: 40px;
+        }
+        form{
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+        }
+        form>label{
+            padding:10px;
+        }
+        #n{
+            padding: 15px 81px;
+        }
+        #p{
+            padding: 5px 26px;;
+        }
+        #link{
+            background-color: rgb(39, 37, 37);
+            color:rgb(239, 233, 233);
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 176px 1px 159px;
+        }
+        #a>a{
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-left: 5px;
+        }
+        #link>div{
+            display:flex;
+            justify-content: space-between;
+        }
+        
+    </style>
+</head>
+<body>
+    <center>
+        <nav id="link">
+            <h1>Pavan_kalyan Bikes</h1>
+            <div id="a">
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            </div>
+        </nav>
+    <form  method="POST">
+        {% csrf_token %}
+        <label id="l">Login</label>
+        <label for="n">username</label>
+        <input type="text" name="n" id="n">
+        <label for="p">password</label>
+        <input type="password" name="p" id="p">
+        <input type="submit" value="Login" id="login">
+        <div id="line"></div>
+    </form>
+    </center>
+    <script src="{% static 'js/mdb.min.js' %}"></script>
+</body>
+</html>
